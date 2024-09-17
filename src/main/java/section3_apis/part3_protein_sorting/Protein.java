@@ -47,7 +47,7 @@ public class Protein implements Comparable<Protein> {
     @Override
     public int compareTo(Protein other) {
         //YOUR CODE HERE (and remove the throw statement)
-        throw new UnsupportedOperationException("Not implemented yet");
+        return name.compareTo(other.name);
     }
     
     /**
@@ -57,8 +57,11 @@ public class Protein implements Comparable<Protein> {
      */
     public static Comparator<Protein> getSorter(SortingType type) {
         //YOUR CODE HERE (and remove the throw statement)
+
         throw new UnsupportedOperationException("Not implemented yet");
     }
+
+
 
     /**
      *
