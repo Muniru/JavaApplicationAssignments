@@ -8,10 +8,18 @@ import java.util.Objects;
  */
 public class Course {
     private String courseId;
+    private int student;
+    private double grade;
 
     public Course(final String courseId) {
         this.courseId = courseId;
     }
+
+    public void setGrade(final int student, final double grade) {
+        this.student = student;
+        this.grade = grade;
+    }
+
 
     public String getCourseId() {
         return this.courseId;
@@ -35,5 +43,13 @@ public class Course {
     @Override
     public int hashCode() {
         return Objects.hash(this.courseId);
+    }
+
+    public double getGrade() {
+        return grade;
+    }
+
+    public int getStudent() {
+        return student;
     }
 }

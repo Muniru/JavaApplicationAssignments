@@ -73,7 +73,7 @@ public class StudentAdminDataReader {
             System.out.println(Arrays.toString(elements));
             //-------------------  YOUR CODE HERE   -------------------//
             Student student = new Student(Integer.parseInt(elements[0]), elements[1], elements[2]);
-            //studentAdmin.
+            studentAdmin.AddStudent(student);
         }
     }
 
@@ -86,7 +86,9 @@ public class StudentAdminDataReader {
             String[] elements = line.split(";");
             System.out.println(Arrays.toString(elements));
             //-------------------  YOUR CODE HERE   -------------------//
-
+            Course course = new Course(elements[0]);
+            course.setGrade(Integer.parseInt(elements[1]), Double.parseDouble(elements[2]));
+            studentAdmin.AddCourse(course);
         }
     }
 
