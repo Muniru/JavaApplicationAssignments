@@ -36,6 +36,7 @@ public class BmiCalculator {
         double userBMI = bc.calculateBMI(userWeight, userHeigth);
         String label = bc.getMessage(userBMI);
 
+
         //YOUR CODE HERE
         //generate output to user
         
@@ -64,7 +65,7 @@ public class BmiCalculator {
      */
     public double getUserWeight() {
         //YOUR CODE HERE (and remove the throw statement)
-        throw new UnsupportedOperationException("Not implemented yet");
+        return this.;
     }
     
     /**
