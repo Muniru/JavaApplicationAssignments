@@ -65,7 +65,7 @@ public class BmiCalculator {
      */
     public double getUserWeight() {
         //YOUR CODE HERE (and remove the throw statement)
-        return this.;
+        return 0;
     }
     
     /**

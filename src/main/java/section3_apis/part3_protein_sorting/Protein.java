@@ -82,34 +82,35 @@ public class Protein implements Comparable<Protein> {
      */
     public static Comparator<Protein> getSorter(SortingType type) {
         //YOUR CODE HERE (and remove the throw statement)
-     switch (type) {
-         case PROTEIN_NAME:
-             return Comparator.comparing(Protein::getName);
-         case ACCESSION_NUMBER:
-             return (p1, p2) -> {
-                 return p1.getAccession().toLowerCase().compareTo(p2.getAccession().toLowerCase());
-             };
-         case GO_ANNOTATION:
-             return (p1, p2) -> {
-                 int sort = 0;
-                 // bio logical process
-                 sort = p1.goAnnotation.getBiologicalProcess().compareTo(p2.goAnnotation.getBiologicalProcess());
-                 if (sort != 0) return sort;
-                 // cellulair component
-                 sort = p1.goAnnotation.getCellularComponent().compareTo(p2.goAnnotation.getCellularComponent());
-                 if (sort != 0) return sort;
-                 // moleculair funciton
-                 sort = p1.goAnnotation.getMolecularFunction().compareTo(p2.goAnnotation.getMolecularFunction());
-                 return sort;
-             };
-         case PROTEIN_WEIGHT:
-             return Comparator.comparingDouble(Protein::getMolecularWeight);
-         case null:
-         default:
-             throw new IllegalArgumentException("Unsupported sort type: " + type);
-     }
+        if (type == null) throw new IllegalArgumentException("Unsupported sort type: " + type);
 
-     }
+        switch (type) {
+            case PROTEIN_NAME:
+                return Comparator.comparing(Protein::getName);
+            case ACCESSION_NUMBER:
+                return (p1, p2) -> {
+                    return p1.getAccession().toLowerCase().compareTo(p2.getAccession().toLowerCase());
+                };
+            case GO_ANNOTATION:
+                return (p1, p2) -> {
+                    int sort = 0;
+                    // bio logical process
+                    sort = p1.goAnnotation.getBiologicalProcess().compareTo(p2.goAnnotation.getBiologicalProcess());
+                    if (sort != 0) return sort;
+                    // cellulair component
+                    sort = p1.goAnnotation.getCellularComponent().compareTo(p2.goAnnotation.getCellularComponent());
+                    if (sort != 0) return sort;
+                    // moleculair funciton
+                    sort = p1.goAnnotation.getMolecularFunction().compareTo(p2.goAnnotation.getMolecularFunction());
+                    return sort;
+                };
+            case PROTEIN_WEIGHT:
+                return Comparator.comparingDouble(Protein::getMolecularWeight);
+            default:
+                throw new IllegalArgumentException("Unsupported sort type: " + type);
+        }
+
+    }
 
 
     /**
