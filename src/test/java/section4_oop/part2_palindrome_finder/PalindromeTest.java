@@ -24,11 +24,29 @@ class PalindromeTest {
     }
 
     @Test
-    void main() {
+    void main1() {
         Palindrome palindrome = new Palindrome();
         String expected = "GGATAGCCGGgTATCC" + System.lineSeparator()+
                 ">>>>>>>><<*<<<<<" + System.lineSeparator();
         palindrome.main(new String[]{ "GGATAGCCGGGTATCC"});
         assertEquals(expected, outContent.toString());
     }
+    @Test
+    void main2() {
+        Palindrome palindrome = new Palindrome();
+        String expected = "GGATAGCCGGCTATCC" + System.lineSeparator()+
+                ">>>>>>>><<<<<<<<" + System.lineSeparator();
+        palindrome.main(new String[]{ "GGATAGCCGGCTATCC"});
+        assertEquals(expected, outContent.toString());
+    }
+
+    @Test
+    void main3() {
+        Palindrome palindrome = new Palindrome();
+        String expected = "GGATAGCCaGGCTATCC" + System.lineSeparator()+
+                ">>>>>>>>*<<<<<<<<" + System.lineSeparator();
+        palindrome.main(new String[]{ "GGATAGCCAGGCTATCC"});
+        assertEquals(expected, outContent.toString());
+    }
+
 }
