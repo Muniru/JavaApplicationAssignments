@@ -24,6 +24,13 @@ public class Palindrome {
         List<Character> rateLeft = new ArrayList<>();
 
         for (int i = 0; i < (letters.length + 1) /2; i++) {
+
+            if(i + 1 > letters.length  /2 && letters.length% 2 != 0){
+                seqLeft.add(letters[i]);
+                rateLeft.add('*');
+                break;
+            }
+
             if(isCounterpart(letters[i],letters[letters.length - i - 1])){
                 seqRight.push(letters[letters.length - i - 1]);
                 rateRight.push('<');
